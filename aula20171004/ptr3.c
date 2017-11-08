@@ -5,7 +5,7 @@ int main(){
     unsigned char * indicador; // aponta para bytes
     int nbytes = sizeof(vetor); //recebe a quantidade de bytes que tem o vetor
     int i, contagem = 0;
-    printf ("End. inicial de vetor: %p\n, vetor");
+    printf ("End. inicial de vetor: %p\n", vetor);
     indicador = (unsigned char *) vetor;
     for (i=0; i < nbytes; i++){
         if (*(indicador+i) == 0xFF)
