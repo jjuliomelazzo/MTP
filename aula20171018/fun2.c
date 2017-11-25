@@ -1,19 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int divisao (int num1, int num2, int *pnum1, int *pnum2, int *pd){
-    if (num2 == 0)
-        return 0;
+int quocienteresto(int numerador, int denominador,int * pquociente, int * presto)
+{
+    if(denominador==0)
+        return 0; //FALSO
     else
-        *pd = num1/num2;
-
-    return 0;
+    {
+        *presto= numerador%denominador;
+        *pquociente= numerador/denominador;
+        return 1; //VERDADEIRO
+    }
 }
-
-
-int main(){
-    int num1, num2, d;
-    printf("Insira os numeros para efetuar a divisao: ");
-    scanf("%d, %d", &num1, &num2);
+int main()
+{
+    int numerador=0, denominador=0, quociente=0, resto=0;
+    printf("Entre com um numero racional (num/den): ");
+    scanf("%d/%d", &numerador, &denominador); getchar();
+    if(quocienteresto(numerador, denominador, &quociente, &resto))
+        printf("Quociente, resto= %d, %d", quociente, resto);
+    else
+        printf("ERRO!");
     return EXIT_SUCCESS;
 }
