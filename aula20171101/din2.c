@@ -17,9 +17,9 @@ int main() {
   float **matriz;
   printf("Entre com a ordem da matriz, no formato 'NxM': ");
   scanf("%dx%d", &N, &M);
-  matriz = calloc(N,sizeof(float*));
+  matriz = (float**)calloc(N,sizeof(float*));
   for(i = 0; i < N; i++) {
-	matriz[i] = calloc(M,sizeof(float));
+	matriz[i] = (float*) calloc(M,sizeof(float));
     for(j = 0; j < M; j++) {
       printf("Elemento (%d,%d): ", i, j);
       preenche(&matriz[i][j]);
